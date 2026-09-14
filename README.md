@@ -24,6 +24,7 @@
 | --- | --- |
 | João Victor Caetano Alves da Silva | 562074 |
 | João Victor Bueno C da Silva | 564115 |
+| Felipe Furlanetto | RM562766
 
 ## Sobre o projeto
 
