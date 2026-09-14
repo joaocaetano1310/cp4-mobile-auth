@@ -1,12 +1,29 @@
-# CP4 — App com Autenticação (Firebase Auth)
+<h1 align="center">CP4 — App com Autenticação</h1>
 
-Tecnologia em Desenvolvimento de Sistemas — 2TDSPF
-Mobile Application Development 
+<p align="center">
+  Aplicativo mobile com autenticação completa via Firebase Authentication<br>
+  <sub>Tecnologia em Desenvolvimento de Sistemas — 2TDSPF · Mobile Application Development</sub>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Expo-SDK%2057-000020?style=flat-square&logo=expo&logoColor=white" alt="Expo SDK 57">
+  <img src="https://img.shields.io/badge/React%20Native-0.86-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React Native">
+  <img src="https://img.shields.io/badge/Firebase%20Auth-v11-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase Auth">
+  <img src="https://img.shields.io/badge/AsyncStorage-2.2-4D9FEB?style=flat-square" alt="AsyncStorage">
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/TWMKVPka8AU"><strong>▶ Assistir à demonstração</strong></a>
+</p>
+
+---
 
 ## Integrantes
 
-- João Victor Caetano Alves da Silva — RM 562074
-- João Victor Bueno C da Silva — RM564115
+| Nome | RM |
+| --- | --- |
+| João Victor Caetano Alves da Silva | 562074 |
+| João Victor Bueno C da Silva | 564115 |
 
 ## Sobre o projeto
 
@@ -14,19 +31,25 @@ Aplicativo mobile em React Native (Expo) com autenticação por e-mail e senha u
 Authentication. Cobre o ciclo completo da conta do usuário: cadastro, login, persistência da
 sessão, logout, recuperação de senha e exclusão da conta.
 
-A sessão é mantida localmente com AsyncStorage: ao fazer login, os dados de identificação
-(uid, nome e e-mail) são gravados sob a chave `@cp4auth:sessao` — a senha nunca é armazenada.
-Na abertura do app o `AuthContext` verifica essa chave e, havendo sessão, leva o usuário direto
-para a área autenticada. No logout e na exclusão da conta a chave é removida.
-
 Não utiliza Firestore.
 
-## Tecnologias
+## Funcionalidades
 
-- React Native / Expo (SDK 57)
-- Firebase Authentication (Firebase JS SDK v11)
-- AsyncStorage
-- React Navigation (native-stack)
+- **Cadastro** com nome, e-mail, senha e confirmação, validando campos obrigatórios, formato de e-mail e coincidência das senhas
+- **Login** com tratamento de erro para credenciais inválidas, conta inexistente e falha de conexão
+- **Sessão persistente**, mantida entre fechamentos do aplicativo
+- **Logout**, encerrando a sessão e limpando os dados locais
+- **Recuperação de senha** por e-mail, pelo próprio serviço do Firebase
+- **Exclusão da conta**, com confirmação e reautenticação por senha
+
+### Como a sessão é mantida
+
+Ao fazer login, os dados de identificação (uid, nome e e-mail) são gravados no AsyncStorage sob a
+chave `@cp4auth:sessao` — a senha nunca é armazenada. Na abertura do app, o `AuthContext` verifica
+essa chave e, havendo sessão, leva o usuário direto para a área autenticada. No logout e na exclusão
+da conta a chave é removida.
+
+As telas autenticadas só são montadas quando existe sessão, então não há rota alcançável sem login.
 
 ## Estrutura
 
@@ -40,8 +63,6 @@ src
 └── utils/validacao.js          # validações de formulário e mensagens de erro
 ```
 
-As telas autenticadas só são montadas quando existe sessão, então não há rota alcançável sem login.
-
 ## Como executar
 
 ```bash
@@ -52,9 +73,5 @@ npx expo start
 
 Leia o QR Code com o Expo Go, ou pressione `a` para Android, `i` para iOS e `w` para o navegador.
 
-Para rodar com outro projeto do Firebase, substitua as credenciais em `src/services/firebaseConfig.js`
-e habilite o provedor E-mail/senha no console.
-
-## Vídeo de demonstração
-
-[Clique aqui e veja o video](https://youtu.be/TWMKVPka8AU)
+> Para rodar com outro projeto do Firebase, substitua as credenciais em
+> `src/services/firebaseConfig.js` e habilite o provedor E-mail/senha no console.
