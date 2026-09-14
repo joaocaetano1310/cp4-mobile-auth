@@ -5,7 +5,8 @@ Mobile Application Development
 
 ## Integrantes
 
-- João Victor Caetano — RM
+- João Victor Caetano Alves da Silva — RM 562074
+- João Victor Bueno C da Silva — RM564115
 
 ## Sobre o projeto
 
