@@ -57,4 +57,4 @@ e habilite o provedor E-mail/senha no console.
 
 ## Vídeo de demonstração
 
-https://youtu.be/TWMKVPka8AU
+[Clique aqui e veja o video](https://youtu.be/TWMKVPka8AU)
